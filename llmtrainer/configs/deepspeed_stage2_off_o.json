@@ -1,0 +1,26 @@
+{
+    "fp16": {
+        "enabled": "auto",
+        "loss_scale": 0,
+        "loss_scale_window": 100000000,
+        "initial_scale_power": 13,
+        "min_loss_scale": 1
+    },
+    "bf16": {
+        "enabled": "auto"
+    },
+    "zero_optimization": {
+        "stage": 2,
+        "offload_optimizer": {
+            "device": "cpu",
+            "pin_memory": true,
+            "ratio": 1.0
+        },
+        "overlap_comm": true
+    },
+    "train_batch_size": "auto",
+    "train_micro_batch_size_per_gpu": "auto",
+    "gradient_clipping": "auto",
+    "gradient_accumulation_steps": "auto",
+    "wall_clock_breakdown": false
+}
