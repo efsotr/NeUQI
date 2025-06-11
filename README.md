@@ -1,4 +1,10 @@
-# NeUQI
+# NeUQI: Near-Optimal Uniform Quantization Parameter Initialization
+
+<p align="center">
+<a href="https://arxiv.org/abs/2505.17595">
+ <img src="https://img.shields.io/badge/arXiv-2505.17595-B31B1B.svg?logo=arxiv&logoColor=white" alt="arXiv"/>
+</a>
+</p>
 
 > ⚠️ **Warning**  
 > It is highly recommended to use Anaconda to replicate the exact environment. Other versions may not work correctly, and their results are not guaranteed. In general, newer versions are less risky than older ones.  
@@ -114,7 +120,6 @@ python quant_model_sequential.py \
   --result_dir ./result --log_dir ./log --save_dir ./quantized_model
 ```
 
-
 ## Distillation Example
 
 To distill a quantized model, enter the `llmtrainer` directory and run the following:
@@ -156,4 +161,15 @@ python eval.py --model vllm \
   --model_args pretrained="${model}",tokenizer=${ori_model},dtype=bfloat16,gpu_memory_utilization=0.9,max_model_len=2048,enforce_eager=True \
   --tasks arc_easy,winogrande,hellaswag,arc_challenge,piqa \
   --batch_size auto
+```
+
+## Citing this work
+
+```
+@article{lin2025neuqi,
+  title={NeUQI: Near-Optimal Uniform Quantization Parameter Initialization},
+  author={Lin, Li and Hu, Xinyu and Wan, Xiaojun},
+  journal={arXiv preprint arXiv:2505.17595},
+  year={2025}
+}
 ```
