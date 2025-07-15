@@ -31,9 +31,9 @@ class QuantArgs:
     enable_H_diag_weight: bool = field(default=False)
     param_init_method_diag: str = field(default=None, metadata={"choices": param_init_methods}) # grid s, zp is LeanQuant
     LDLQ_fix_iters: int = field(default=0)
-    grid_tot_steps: int = field(default=256)
+    grid_tot_steps: int = field(default=2048)
     grid_start_steps: int = field(default=1)
-    grid_mid_tot_steps: int = field(default=1)
+    grid_mid_tot_steps: int = field(default=64)
     enable_grid_low_precision_step: bool = field(default=False)
 
     def __post_init__(self):
